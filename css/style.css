@@ -51,7 +51,7 @@ header{
 
 .navbar .nav_links li a{
     color: var(--color-black);
-    font-weight: var(--weight-regular);
+    font-weight: var(--weight-bold);
     font-size: 1vw;
     text-transform: uppercase;
 }
