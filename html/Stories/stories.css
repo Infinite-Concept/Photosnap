@@ -100,7 +100,160 @@ home section
     background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
+    padding-block: 9rem;
 }
+
+.hero_content {
+    display: grid;
+    grid-template-columns: minmax(49.5rem, 6.1fr) minmax(27.3rem, 8.3fr);
+}
+
+@media (max-width: 500px){
+    .hero_content{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .image_mobile {
+        order: 1;
+        display: block;
+    }
+    .image_mobile img {
+        width: 100%;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        overflow-clip-margin: content-box;
+        overflow: clip;
+    }
+    .hero_h1{
+        font-size: 4rem;
+        line-height: 1.2rem;
+    }
+}
+
+
+@media (max-width: 768px){
+    .hero_background {
+        
+        background-image: url(../../images/stories/tablet/moon-of-appalacia.jpg);
+    }
+    .hero_text{
+        order: 2;
+        background-color: var(--pure-black);
+    }
+    .hero_h1{
+        margin-top: 2.1rem;
+    }
+    
+}
+.hero_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+    background-color: transparent;
+}
+
+.hero_wrapper{
+    max-width: 39rem;
+    margin-inline: 3.3rem;
+    margin-block: 5rem;
+}
+
+.hero_h4{
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: var(--fs-700);
+    color: var(--pure-white);
+    text-transform: uppercase;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.hero_h1 {
+    max-width: 28.5rem;
+    margin-top: 1.2rem;
+    text-transform: uppercase;
+    font-size: 3.2rem;
+    font-weight: var(--fs-700);
+    line-height: 1.25;
+    letter-spacing: 4.17px;
+    color: var(--pure-white);
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.image_mobile{
+    display: none;
+    order: 2;
+}
+
+.hero_desc{
+    margin-top: 1.2rem;
+    display: flex;
+}
+
+.hero_time{
+    color: var(--pure-white);
+    font-weight: var(--fs-400);
+    font-size: 1.3rem;
+    opacity: 0.75;
+}
+
+.hero_para{
+    font-size: 1.3rem;
+    font-weight: var(--fs-400);
+    color: var(--pure-white);
+}
+
+.hero_desc_para{
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 1.667;
+    opacity: 0.6;
+    color: var(--pure-white);
+}
+
+.hero_link {
+    color: var(--pure-white);
+    display: inline-flex;
+    align-items: center;
+    gap: 1.8rem;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: var(--fs-700);
+    letter-spacing: 2px;
+    transition: all 0.2s;
+    z-index: 10;
+    position: relative;
+    margin-top: 2.3rem;
+}
+
+.radial-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    background-image: radial-gradient(68.48% 68.48% at 0% 100%, #FFC593 0%, rgba(188, 113, 152, 0.496968) 52.92%, rgba(91, 119, 253, 0.00770543) 99.99%, rgba(90, 119, 255, 0.0001) 100%);
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 300ms ease-in-out;
+}
+
+/* ==========
+stories section
+========== */
 
 .stories {
     display: grid;
@@ -234,4 +387,159 @@ figure {
 path, g{
     fill: var(--pure-white);
     stroke: var(--pure-white);
+}
+
+/* ============
+footer
+============ */
+
+footer{
+    background-color: var(--pure-black);
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.footer_grid {
+    display: grid;
+    grid-template-columns: 18vw 1fr 25vw;
+    grid-template-areas:
+        "logo navigation cta"
+        "social navigation copyright";
+    grid-row-gap: 8vw;
+    grid-column-gap: 11vw;
+    padding: 4vw 0;
+}
+
+.footer__logo {
+    grid-area: logo;
+}
+
+.footer__logo img{
+    width: 80%;
+    height: auto;
+}
+
+.footer__social {
+    grid-area: social;
+    margin-top: -3vw;
+}
+
+.footer__social a img{
+    width: 1.7vw;
+    height: auto;
+    margin-right: 1.2vw;
+}
+
+.footer__navigation {
+    margin-bottom: 0;
+    grid-area: navigation;
+}
+
+.footer__navigation ul li{
+    padding: .7vw 0;
+}
+
+.footer__navigation ul li a:link,
+.footer__navigation ul li a:visited {
+    color: var(--pure-white);
+}
+
+.footer__navigation ul li a{
+    font-size: 1vw;
+    letter-spacing: 2px;
+    font-weight: var(--fs-700);
+    text-transform: uppercase;
+}
+
+.footer__navigation ul li a:hover {
+    color: rgba(255, 255, 255, 0.61);
+}
+
+.footer_btn {
+    grid-area: cta;
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 1vw;
+    font-weight: var(--fs-700);
+    letter-spacing: 2px;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.8rem;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    color: var(--pure-white);
+    justify-self: end;
+} 
+
+.footer_btn:hover{
+    text-decoration: underline;
+}
+
+.footer_desc {
+    display: block;
+    color: var(--pure-white);
+    font-weight: var(--fs-400);
+    font-size: 1.18vw;
+    opacity: 0.525;
+    grid-area: copyright;
+    justify-self: end;
+    margin-top: -4vw;
+}
+
+
+/* @media (max-width: 768px) {
+    .footer_grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "logo cta"
+            "navigation ."
+            "social copyright";
+        justify-items: stretch;
+    }
+
+    .footer__navigation {
+        margin-top: 0;
+        margin-bottom: 4.8rem;
+    }
+
+    .footer_text {
+        text-align: left;
+    }
+
+    .footer_desc {
+        justify-self: end;
+    }
+
+    .footer_btn {
+        justify-self: end;
+    }
+} */
+
+@media (max-width: 550px) {
+    .footer_grid{
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "logo"
+            "social"
+            "navigation"
+            "cta"
+            "copyright";
+        justify-items: center;
+        grid-row-gap: 2rem;
+    }
+    .footer__navigation ul {
+        gap: 2.5rem;
+    }.footer_btn{
+        margin-bottom: 1vw;
+    }
+    .footer_btn, .footer_desc{
+        justify-self: center;
+    }
 }
