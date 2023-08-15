@@ -371,6 +371,157 @@ features
     text-align: center;
 }
 
-/* ==================
+/* ============
 footer
-================== */
+============ */
+
+footer{
+    background-color: #000;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.footer_grid {
+    display: grid;
+    grid-template-columns: 18vw 1fr 25vw;
+    grid-template-areas:
+        "logo navigation cta"
+        "social navigation copyright";
+    grid-row-gap: 8vw;
+    grid-column-gap: 11vw;
+    padding: 4vw 0;
+}
+
+.footer__logo {
+    grid-area: logo;
+}
+
+.footer__logo img{
+    width: 80%;
+    height: auto;
+}
+
+.footer__social {
+    grid-area: social;
+    margin-top: -3vw;
+}
+
+.footer__social a img{
+    width: 1.7vw;
+    height: auto;
+    margin-right: 1.2vw;
+}
+
+.footer__navigation {
+    margin-bottom: 0;
+    grid-area: navigation;
+}
+
+.footer__navigation ul li{
+    padding: .7vw 0;
+}
+
+.footer__navigation ul li a:link,
+.footer__navigation ul li a:visited {
+    color: #fff;
+}
+
+.footer__navigation ul li a{
+    font-size: 1vw;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.footer__navigation ul li a:hover {
+    color: rgba(255, 255, 255, 0.61);
+}
+
+.footer_btn {
+    grid-area: cta;
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 1vw;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.8rem;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    color: #fff;
+    justify-self: end;
+} 
+
+.footer_btn:hover{
+    text-decoration: underline;
+}
+
+.footer_desc {
+    display: block;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.18vw;
+    opacity: 0.525;
+    grid-area: copyright;
+    justify-self: end;
+    margin-top: -4vw;
+}
+
+
+@media (max-width: 768px) {
+    .footer_grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "logo cta"
+            "navigation ."
+            "social copyright";
+        justify-items: stretch;
+    }
+
+    .footer__navigation {
+        margin-top: 0;
+        margin-bottom: 4.8rem;
+    }
+
+    .footer_text {
+        text-align: left;
+    }
+
+    .footer_desc {
+        justify-self: end;
+    }
+
+    .footer_btn {
+        justify-self: end;
+    }
+}
+
+@media (max-width: 550px) {
+    .footer_grid{
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "logo"
+            "social"
+            "navigation"
+            "cta"
+            "copyright";
+        justify-items: center;
+        grid-row-gap: 2rem;
+    }
+    .footer__navigation ul {
+        gap: 2.5rem;
+    }.footer_btn{
+        margin-bottom: 1vw;
+    }
+    .footer_btn, .footer_desc{
+        justify-self: center;
+    }
+}
