@@ -64,11 +64,15 @@ header {
 }
 
 .navbar {
-    padding: 1.5vw 10%;
+    padding: 1.2vw 15%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: var(--pure-white);
+}
+
+.navbar .logo a img{
+    width: 10rem;
 }
 
 .navbar .nav_links {
@@ -82,21 +86,27 @@ header {
 .navbar .nav_links li a {
     color: var(--pure-black);
     font-weight: var(--fs-700);
-    font-size: 1vw;
+    font-size: .8rem;
     text-transform: uppercase;
+    letter-spacing: .2rem;
 }
 
 .navbar .nav_links li a:hover {
-    color: var(--color-gray);
+    color: rgb(146, 146, 146);
 }
 
 .navbar .nav_button button {
-    font-size: 1vw;
-    padding: .67vw 1.4vw;
+    font-size: .8rem;
+    padding: 1vw 1.6vw;
     text-transform: uppercase;
     background-color: var(--pure-black);
     color: var(--pure-white);
     font-weight: var(--fs-700);
+}
+
+.navbar .nav_button button:hover{
+    background-color: rgb(146, 146, 146);
+    color: var(--pure-black);
 }
 
 /* ============
@@ -106,6 +116,7 @@ price home
 .price_home {
     display: grid;
     grid-template-columns: minmax(27.3rem, 8.3fr) minmax(49.5rem, 6.1fr) ;
+    max-width: 100%;
 }
 
 .price_home_text{
@@ -159,7 +170,7 @@ price home
 }
 
 
-@media (max-width: 708px) {
+@media (max-width: 768px) {
     .price_home {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     }
@@ -168,6 +179,11 @@ price home
     }
     .price_home picture {
         order: 1;
+    }
+    .price_home picture img{
+        width: 100%;
+        height: 60vh;
+        object-fit: cover;
     }
     .radial_gradient{
         top: 0;
@@ -297,14 +313,25 @@ input {
 
 .price_card{
     background-color: var(--light-grey-2);
-    padding: 3rem 3rem;
+    padding: 3rem 2rem;
 }
 
 .price_card_highlight {
     background-color: var(--pure-black);
-    padding-top: 6rem;
-    padding-bottom: 7rem;
+    padding: 6rem 2rem;
     position: relative;
+}
+
+.price_card_highlight::before {
+    height: 6px;
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background-image: linear-gradient(0.6deg, #FFC593 0%, #BC7198 43.29%, #5A77FF 83.33%);
 }
 
 .price_card_highlight .price_card_head,
@@ -332,10 +359,15 @@ input {
 .price_card_desc,
 .price_card_highlight .price_card_desc{
     margin-top: 1.4rem;
-    font-size: 1rem;
+    font-size: .9rem;
     line-height: 1.667;
     opacity: 0.6;
     display: block; 
+}
+
+.price_card_highlight .price_card_btn{
+    background-color: var(--pure-white);
+    color: var(--pure-black);
 }
 
 .price_card_price{
@@ -462,7 +494,6 @@ input {
 }
 
 
-
 @media (max-width: 768px) {
     .pricing_container{
         max-width: 713px;
@@ -503,6 +534,10 @@ input {
     .price_body_list li span{
         display: block;
     }
+    .price_card_highlight{
+        height: 100%;
+        width: 6px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -526,4 +561,181 @@ input {
         font-size: 3.2rem;
         line-height: 1.25;
     }
+}
+
+/* footer */
+footer {
+    background-color: #000;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.footer_grid {
+    display: grid;
+    grid-template-columns: 18vw 1fr 25vw;
+    grid-template-areas:
+        "logo navigation cta"
+        "social navigation copyright";
+    grid-row-gap: 8vw;
+    grid-column-gap: 11vw;
+    padding: 4vw 0;
+}
+
+.footer__logo {
+    grid-area: logo;
+}
+
+.footer__logo img {
+    width: 11rem;
+    height: auto;
+}
+
+.footer__social {
+    grid-area: social;
+    margin-top: -3vw;
+}
+
+.footer__social a img {
+    width: 1.5rem;
+    height: auto;
+    margin-right: 1.2vw;
+}
+
+.footer__navigation {
+    margin-bottom: 0;
+    grid-area: navigation;
+}
+
+.footer__navigation ul li {
+    padding: .7vw 0;
+}
+
+.footer__navigation ul li a:link,
+.footer__navigation ul li a:visited {
+    color: #fff;
+}
+
+.footer__navigation ul li a {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.footer__navigation ul li a:hover {
+    color: rgba(255, 255, 255, 0.61);
+}
+
+.footer_btn {
+    grid-area: cta;
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 1vw;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.8rem;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    color: #fff;
+    justify-self: end;
+}
+
+.footer_btn:hover {
+    text-decoration: underline;
+}
+
+.footer_desc {
+    display: block;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+    opacity: 0.525;
+    grid-area: copyright;
+    justify-self: end;
+    margin-top: -4vw;
+}
+
+
+@media (max-width: 950px) {
+    .footer_grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "logo cta"
+            "navigation ."
+            "social copyright";
+        justify-items: stretch;
+        grid-row-gap: 3rem;
+        grid-column-gap: .2rem;
+    }
+    .container {
+        max-width: 85%;
+    }
+
+    .footer__navigation {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .footer_text {
+        text-align: left;
+        
+        float: left;
+    }
+
+    .footer__navigation ul li a{
+        padding: 0 10px;
+    }
+
+    .footer_desc {
+        justify-self: end;
+    }
+
+    .footer_btn {
+        justify-self: end;
+        font-size: 1.7vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer_grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "logo"
+            "social"
+            "navigation"
+            "cta"
+            "copyright";
+        justify-items: center;
+        grid-row-gap: 2rem;
+    }
+
+    .footer__navigation ul {
+        gap: 2.5rem;
+    }
+
+    .footer_btn {
+        margin-bottom: 1vw;
+    }
+
+    .footer_btn,
+    .footer_desc {
+        justify-self: center;
+    }
+    .footer_text {
+        text-align: center;
+        float: none;
+    }
+    .footer__social a img {
+        margin-top: 2rem;
+    }
+
 }
